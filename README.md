@@ -9,40 +9,44 @@ In this example we have two entities `Employee` and `Task` with one to many rela
 4. Put below queries in **POST** request url `http://localhost:8088/api/v1/graphql`
 
  **Example 1 - Graph QL Query to fetch Employee** 
-
- `{
- 	employee(EmployeeId : 102){
+ 
+    {
+ 	    employee(EmployeeId : 102){
  		name
  		city
  		state
- 	}
- }`
- 
- 
+ 	    }
+    }
+    
  **Graph QL Output**
- `{
-      "employee": {
+ 
+    {
+        "employee": {
           "name": "John",
           "city": "San Francisco",
           "state": "California"
-      }
-  }`
+        }
+    }
   
-  
- **Example 2 -Graph QL Query to fetch Employee** 
- `{
-  	employee(EmployeeId : 101){
-  		name
-  		city
-  		state
-  		tasks {
-  			name
-  		}
-  	}
-  }`
+ 
+ 
+ 
+**Example 2 - Graph QL Query to fetch Employee** 
+
+    {
+  	    employee(EmployeeId : 101){
+            name
+            city
+            state
+            tasks {
+                name
+            }
+  	    }
+    }
   
  **Graph QL Output**
- `{
+ 
+    { 
       "employee": {
           "name": "Alex",
           "city": "Oakland",
@@ -56,5 +60,5 @@ In this example we have two entities `Employee` and `Task` with one to many rela
               }
           ]
       }
-  }`
+    }
    
