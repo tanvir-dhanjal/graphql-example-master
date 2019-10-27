@@ -1,0 +1,23 @@
+
+# Define the POJO schemas
+type Employee {
+    id : ID
+    name : String
+    city : String
+    state : String
+    country : String
+    tasks : [Task]
+}
+
+type Task {
+    id : ID
+    name : String
+    employeeId : Int
+    description : String
+    status : String
+}
+
+type Query {
+    employee(EmployeeId : ID) : Employee
+    employees : [Employee]
+}
